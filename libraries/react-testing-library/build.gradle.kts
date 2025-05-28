@@ -62,3 +62,9 @@ tasks {
         dependsOn("kspTestKotlinJs")
     }
 }
+
+afterEvaluate {
+    tasks.matching { it.name.startsWith("sign") }.configureEach {
+        enabled = false
+    }
+}
